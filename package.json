@@ -1,0 +1,27 @@
+{
+  "name": "js_school",
+  "version": "1.0.0",
+  "description": "lecture from torrent",
+  "main": "y",
+  "scripts": {
+    "lint": "eslint ./source/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ellavrubel/js_tutorial.git"
+  },
+  "keywords": [
+    "school",
+    "frontend"
+  ],
+  "author": "Ella Vrubel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ellavrubel/js_tutorial/issues"
+  },
+  "homepage": "https://github.com/ellavrubel/js_tutorial#readme",
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.11.0"
+  }
+}
