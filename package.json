@@ -4,7 +4,7 @@
   "description": "lecture from torrent",
   "main": "y",
   "scripts": {
-    "lint": "eslint ./source/index.js"
+    "lint": "eslint index.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/ellavrubel/js_tutorial#readme",
   "dependencies": {
-    "babel-eslint": "^10.1.0",
+    "babel-eslint": "^10.1.0"
+  },
+  "devDependencies": {
     "eslint": "^7.11.0"
   }
 }
