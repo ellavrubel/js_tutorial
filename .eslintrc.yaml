@@ -7,5 +7,4 @@
       - 2
       - single
 
-    no-unused-vars:
-      - 2
+
