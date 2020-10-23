@@ -4,7 +4,7 @@
   "description": "lecture from torrent",
   "main": "y",
   "scripts": {
-    "lint": "eslint index.js"
+    "lint": "eslint index-lesson_1_2.js"
   },
   "repository": {
     "type": "git",
