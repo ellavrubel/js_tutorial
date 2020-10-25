@@ -1,142 +1,189 @@
 
+    // циклы работают только с var/let  const - не работает
 
-     const month = ['April', 'June', 'March']; // литерал массива
-     const monthLength = month.length;
+    let i = 1;
 
-     console.log(month);
-     console.log(monthLength);
+    while (i < 5){
+        console.log(i);  // 1 2 3 4
+        i++;
+    }
 
-     //
+    let t = 0;
+    const month = ['june', 'July', 'Feb', 'March'];
 
-     const neo = new Array(5); // конструктор массива
+    while (month[t] !== 'Feb'){
+        console.log(month[t]); // June July
+        t++;
+    }
 
-     const neoLength = neo.length;
+    let h = 0;
+    const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-     console.log(neo);
-     console.log(neoLength);
+    while (num[h]) {
+        console.log(num[h]); // 1 2 3 4 5 6 7 8 9 10 и прекратит итеррации, т.к. 11 = false = undefined
+        h++;
+    }
 
-     //
-     const a = new Array(5.5);
-
-     const aLength = a.length;
-
-     console.log(a); // RangeError: Invalid array length
-     console.log(aLength);
-
-     //
-
-     const v = new Array(void 0); // undefined
-     console.log(v);
-
-     //
+    // обратная итеррация
 
 
-     //     ES5 Duck typing проверка массива
+    const rty = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-     const m = ['June', 'July', 'March'];
+    let e = rty.length - 1;
 
-     if (typeof m === 'object' && m.splice){
-
-         console.log('-> This is an array!');
-
-     }
-
-     // но
-
-     const mo = {
-
-         0: 'june',
-         1: 'July',
-         2: 'December',
-         length: 3,
-         splice: function () {},
-     };
-
-         if (typeof mo === 'object' && mo.splice){
-             console.log('-> This is another array!'); // ложный результат
-     }
-
-    // поэтому правильная проверка, кот доступна только в ES6
-
-     const rio = ['June', 'July', 'March'];
-     const rio2 = {
-
-         0: 'june',
-         1: 'July',
-         2: 'December',
-         length: 3,
-         splice: function () {},
-     };
-
-     console.log(Array.isArray(rio)); // true
-     console.log(Array.isArray(rio2)); // false
-
-//
-
-//     ES5
-     const newA = new Array('June', 'July', 'March');
-
-//     ES 6
-     const anotherArray = Array.of ('June', 'July', 'March');
-
-//  способ создания массива из массиво-подобных объектов
-
-     const ar = Array.from({
-         0: 'june',
-         1: 'July',
-         2: 'December',
-         length: 3,
-     });
-     console.log(ar); // [ 'june', 'July', 'December' ]
-
-console.log(ar.length);  // 3
-
-     const strArray = Array.from('ELLA');
-        console.log(strArray); // [ 'E', 'L', 'L', 'A' ]
-        console.log(strArray.length); //  4
+    while (rty[e]) {
+        console.log(rty[e]); // 10 9 8 7 6 5 4 3 2 1
+        e--;
+    }
 
 
-     const yu = Array.from({
-         0: 'june',
-         1: 'July',
-         2: 'December',
-         length: 2,
-     });
-     console.log(yu); // [ 'june', 'July']
+    const asd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const reverseAsd = [];
 
-     console.log(yu.length);  // 2
+    let q = asd.length - 1;
+    let w = 0;
+
+    while (asd[q]) {
+
+        reverseAsd[w] = asd[q];
+
+        q--;
+        w++;
+
+        console.log(reverseAsd);  //
+        // [10]
+        // [10, 9]
+        // [10, 9, 8]
+        // [10, 9, 8, 7]
+        // [10, 9, 8, 7, 6]
+        // [10, 9, 8, 7, 6, 5]
+        // [10, 9, 8, 7, 6, 5, 4]
+        // [10, 9, 8, 7, 6, 5, 4, 3]
+        // [10, 9, 8, 7, 6, 5, 4, 3, 2]
+        // [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+}
+
+// do while
+
+    const ar = [ 7, 2, 3, 4, 5, 6, 7, 8, 9, 31];
+    let k = 0;
+
+    do {
+        console.log(ar[k]);
+        k++
+    }  while (ar[k] < 7);
 
 //
 
-//     получение первого и последнего элемента массива
+//    for
 
-     const firstElement = yu[0];
-     const lastElement = yu [yu.length - 1];
+    for (var po = 0; po < 5; po++) {
+        console.log(po); // 0 1 2 3 4
+    }
+
+    console.log('after loop', po); //  var вне фунции имеет глобальную область видимости, ее видно за циклом
+
+
+    for (var p = 0; p < 5; p++) {
+        console.log(p);
+
+        var p = 3; // бесконечный цикл var - использовать с отсторожностью
+
+    }
+
+
+    for (let test = 0; test < 5; test++) {
+        console.log(test);
+    }
+
+    console.log('after loop', test); // ReferenceError: test is not defined      let не видно за пределами цикла
+
+
+
+    for (let test2 = 0; test2 < 5; test2++) {
+
+        let test2 = 7;
+
+        console.log(test2); // 7 7 7 7 7  в данном случае к первой переменной test2 доступа нет
+    }
+
+    for (let xod = 0; xod < 5; xod++) {
+
+        let xod2 = 7;
+
+        console.log(xod, xod2); // к первой переменной xod доступ есть
+          // 0 7
+          // 1 7
+          // 2 7
+          // 3 7
+          // 4 7
+    }
+
+
+    for (let ghj = 0; ghj < 8; ghj++ ){
+
+        console.log(ghj);  //  ReferenceError: Cannot access 'ghj' before initialization
+
+        let ghj = 7; // создается TDZ и поднятие переменной
+    }
+
+
+
+    // отфильтровать четные числа
+
+    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const evenArray = [];
+
+    for (let u = 0; u < array.length; u++){
+        if(array[u] % 2 === 0){
+            evenArray[evenArray.length++] = array[u];
+        }
+    }
+
+    console.log(array);  // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    console.log(evenArray); //   [2, 4, 6, 8, 10]
+
+    //
+
+//     DZ
+
+    const dz = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    const evenDz = [];
+
+    for (let b = 0; b < dz.length; b++){
+
+        if(dz[b] % 2 === 0){
+
+            evenDz.push(dz[b]);
+
+        }
+    }
+
+    console.log(dz);  // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    console.log(evenDz); // [ 12, 14, 16, 18, 20 ]
 
 //
 
-//     все, что не является валидным индексом массива, создает его свойство - некая мета - информация
 
-     strArray [-1] = 'Olga';
-     strArray ['date'] = new Date();
+//     посчитать сумму все нечетных элементов
 
-     console.log(strArray);
+    const allNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let oddSum = 0;
 
-//
+    for (let s = 0; s < allNumbers.length; s++){
+        if(allNumbers[s] % 2 !== 0){
 
-//     обрезка массива - BAD PRACTICE!
+            oddSum += allNumbers[s];
 
-     strArray.length = 3;
-     console.log(strArray); // ["E", "L", "L", -1: "Olga"]
+        }
+    }
 
-     strArray.length = 5;
-     console.log(strArray); // ["E", "L", "L", empty × 2, -1: "Olga"]
-//
-
-//     в итоге - 2 переменные и 1 массив, т.к. вторая переменная не копирует массив, а только на него ссылается
-
-     const io = ['E', 'L', 'L'];
-     const io2 = io;
+    console.log(oddSum); // 25
 
 //
+
+
 
