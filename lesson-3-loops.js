@@ -145,27 +145,6 @@
 
     console.log(evenArray); //   [2, 4, 6, 8, 10]
 
-    //
-
-//     DZ
-
-    const dz = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-    const evenDz = [];
-
-    for (let b = 0; b < dz.length; b++){
-
-        if(dz[b] % 2 === 0){
-
-            evenDz.push(dz[b]);
-
-        }
-    }
-
-    console.log(dz);  // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-    console.log(evenDz); // [ 12, 14, 16, 18, 20 ]
-
-//
 
 
 //     посчитать сумму все нечетных элементов
