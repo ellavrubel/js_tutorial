@@ -185,5 +185,105 @@
 
 //
 
+//    подсчет числа букв в строке
+
+    const str = 'The standard string class provides support for such objects with an interface similar to that of a standard container of bytes, but adding features specifically designed to operate with strings of single-byte characters.';
+
+    let characters = 0;
+
+    for (let c = 0; c < str.length; c++){
+        characters += 1;
+    }
+    console.log(characters); // 220
+
+    // const text = Array.from('The standard string class provides support for such objects with an interface similar to that of a standard container of bytes, but adding features specifically designed to operate with strings of single-byte characters.');
+    //
+    // let textLength = text.length;
+    //
+    // console.log(textLength);   альтернативный вариант посчета
+
+// запись строки наоборот
+
+    const ddt = 'The standard string class provides support for such objects with an interface similar to that of a standard container of bytes, but adding features specifically designed to operate with strings of single-byte characters.';
+
+    let reverseString = '';
+
+    for (let x = ddt.length -1; x >= 0; x--){
+        reverseString += ddt[x];
+    }
+
+    console.log(reverseString); // .sretcarahc etyb-elgnis fo sgnirts htiw etarepo ot dengised yllacificeps serutaef gnidda tub ,setyb fo reniatnoc dradnats a fo taht ot ralimis ecafretni na htiw stcejbo hcus rof troppus sedivorp ssalc gnirts dradnats ehT
+
+//
+
+//    break
+
+    for (let w = 0; w < 10; w++){
+        if (w === 6){
+            console.log('break');
+            break;
+        }
+
+        console.log(w);
+    }
+
+//    continue
+
+    for (let w2 = 0; w2 < 10; w2++){
+        if (w2 === 6){
+            console.log('Empty space instead');
+            continue;
+        }
+
+        console.log(w2);
+    }
+
+
+// Label
+
+    firstLoop: for (let f = 0; f < 5; f++){
+
+        for (let y = 0; y < 5; y++){
+            if (y === 4){
+                continue firstLoop;
+            }
+
+            console.log(y ,f);
+        }
+    }
+
+
+     for (let qwe = 0; qwe < 5; qwe++){
+
+         secondLoop: for (let se = 0; se < 5; se++){
+            if (se === 2){
+                continue secondLoop;
+            }
+
+            console.log(qwe ,se);
+        }
+    }
+
+//     infinity loops чаще считаются ошибками за искл случаев постоянного слежения за опред областью на предмет изменений
+
+    while (true){
+         console.log(new Date());
+    }
+
+
+     do {
+         console.log(new Date());
+     } while (true);
+
+
+     for (;;){
+         console.log(new Date());
+     }
+
+//
+
+
+
+
 
 
