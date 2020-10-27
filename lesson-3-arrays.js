@@ -140,3 +140,33 @@ console.log(ar.length);  // 3
 
 //
 
+//     splice method
+
+     const testArray = ['Foot', 'Table', 'Gong', 'Tea', 'Plate'];
+     testArray.splice(3, 2);
+
+     console.log(testArray); //["Foot", "Table", "Gong"]
+
+     const testArray2 = ['Foot', 'Table', 'Gong', 'Tea', 'Plate'];
+     testArray2.splice(3, 2, 'Olga', 'Ella'); // с 3 позиции удалить 2 элемента и добавить туда же 'Olga', 'Ella'
+
+     console.log(testArray2); // ["Foot", "Table", "Gong", "Olga", "Ella"]
+
+//
+
+     // copying an array
+
+     const firstArray = Array.of('one', 'two', 'three', 'four', 'five', 'six', 'seven');
+
+     const copyFirstArray = firstArray.slice(2, 5); // если нет цифр - копируется весь, существующий не изменяет, если есть цифры- первая откуда, вторая- до какой позиции, не включая ее
+     console.log(copyFirstArray); //  ["three", "four", "five"]
+
+     const copyOfWholeArray = firstArray.slice();
+     console.log(copyOfWholeArray);
+
+     const copyFromTheEnd = firstArray.slice(-5, -1);
+     console.log(copyFromTheEnd); // ["three", "four", "five", "six"]
+
+//     метод concat() также копирует массив, с аргументами еще и добавляет их в конец копии массива
+
+//
