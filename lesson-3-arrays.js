@@ -170,3 +170,32 @@ console.log(ar.length);  // 3
 //     метод concat() также копирует массив, с аргументами еще и добавляет их в конец копии массива
 
 //
+
+
+//  reduce()
+
+     const numbers = [2, 4, -7, 6, 8];
+
+     let sumNumbers = 0;
+
+     for (let n of numbers){
+         sumNumbers += n;
+     }
+
+     console.log(sumNumbers);
+
+//     более удобный способ:
+
+     const numbers2 = [2, 4, -7, 6, 8];
+
+     const sumAll = numbers2.reduce((accumulator, currentValue)=> {
+                return accumulator + currentValue;
+     }, 0);
+
+     console.log(sumAll);
+
+//          короткая запись:
+     //          const sumAll = numbers2.reduce(
+     //             (accumulator, currentValue) => accumulator + currentValue;
+     //            );
+
