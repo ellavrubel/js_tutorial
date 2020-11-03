@@ -3,9 +3,8 @@
 
     // Напишите функцию join которая в качестве параметров будет принимать
     // неограниченное количество аргументов и возвращать строку разделённую пробелами.
-
-
     // 1. Если в функцию не передавались аргументы, функция должна вернуть null;
+
     // 2. Пустая строка должна игнорироваться;
     // 3. Строка состоящая только из пробелов должна игнорироваться;
     // 4. Пробелы вначале и в конце строки нужно удалять;
@@ -14,35 +13,24 @@
 
 
 
-function joinFunc (...args) {
+   const joinFunc = function (...args) {
+        if (args.length === 0){
+          return null;
+        }
 
-  if (arguments.length === 0){
-    return null;
-  }
+        let array = args.filter(function(string){
 
-  let argsArray = [];
+         if (typeof string === 'string' && string !== '' && string.replace(/\s/g, '').length){
 
-  for (let i = 0; i < arguments.length; i++) {
-    argsArray[i] = arguments[i];
-  }
+           return string;
+         }
 
-    if (argsArray[] === null && (!argsArray[].replace(/\s/g, '').length) && typeof argsArray[] !== 'string') {
+        }).map(function(string){
+          return string.trim()
+        })
 
-      return false;
+     return array.join(' ');
+   }
 
-    } else {
-
-      const resArray = argsArray.map(el => el.trim());
-
-      resArray.join( );
-
-    }
-
-    return argsArray.join ( );
-
-
-
-}
-
-const res = joinFunc('Olga', 'is ', '   ', '', 'my', 34, 'name!');
-console.log(res);
+   let s = joinFunc( 98, '         Olga          ', '', 'is','my', '      ', '   name!  ');
+   console.log(s);  // Olga is my name!
