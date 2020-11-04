@@ -89,9 +89,7 @@
 //     return   ES5 необходимо писать return иначе результатов функции будет undefined
 
     function myFunc( f, g) {
-        const res = f + g;
-
-        return res;
+      return f + g;
 
     //      console.log(1) unreachable code - все что после return не выполняется и никакой смысловой нагрузки не несет
     }
