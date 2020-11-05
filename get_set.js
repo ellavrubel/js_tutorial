@@ -1,24 +1,23 @@
  'use strict';
 
   // getter
- //  const user = {
- //    firstName: 'Tina',
- //    lastName: 'Tanina'
- //  }
- //
- //  Object.defineProperty(user, 'fullName', {
- //
- //      get: function fullName (){
- //
- //       return this.firstName + ' ' + this.lastName;
- //      }
- // })
- //
- // console.log(user); // { firstName: 'Tina', lastName: 'Tanina' }  свойство fullName физически отсутствует в объекте
- //
- // console.log(user.fullName); // Tina Tanina
+  const user = {
+    firstName: 'Tina',
+    lastName: 'Tanina'
+  }
 
-//
+  Object.defineProperty(user, 'fullName', {
+
+      get: function fullName (){
+
+       return this.firstName + ' ' + this.lastName;
+      }
+ })
+
+ console.log(user); // { firstName: 'Tina', lastName: 'Tanina' }  свойство fullName физически отсутствует в объекте
+
+ console.log(user.fullName); // Tina Tanina
+
 
 //  setter
 
