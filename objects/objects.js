@@ -118,7 +118,7 @@
     friends:[{name: 'Ylia'}, {name: 'Natali'}]
 
   }
-  
+
   console.log(your.friends[1].name); // Natali
 //
 
@@ -146,6 +146,42 @@
   person.name = 'Ella'; // строка игнорируется
 
   console.log(person.name); // Rick,  а если 'use strict' - TypeError: Cannot assign to read only property 'name' of object '#<Object>'
+
+
+// определение через defineProperties нескольких свойств объекта
+
+    const person2 = {};
+
+    Object.defineProperties(person2, {
+
+      firstName: {
+        value: 'Olga'
+      },
+
+      lastName: {
+        value: 'Fedorova'
+      },
+
+      fullName: {
+        get: function () {    // должно быть или value или get   если value - вызывать следует так: console.log(person2.fullName()); // т.к. нет set  перезаписать fullName будет нельзя
+
+          return this.firstName + ' ' + this.lastName;
+        },
+      },
+    });
+
+    console.log(person2);    // {}
+    console.log(person2.firstName);   // Olga
+    console.log(person2.lastName);    // Fedorova
+    console.log(person2.fullName);    // Olga Fedorova
+
+
+person2.firstName = 'Masha';
+console.log(person2.firstName);   // TypeError: Cannot assign to read only property 'firstName' of object '#<Object>'
+
+person2.fullName = 'Ella Vrubel';
+console.log(person2.fullName);    // TypeError: Cannot set property fullName of #<Object> which has only a getter
+
 
 
 

@@ -32,17 +32,17 @@
 
   Object.defineProperty(user2, 'fullName', {
 
-    set: function (value) {
+     get: function () {                       //es5?
+
+      return this.firstName + ' ' + this.lastName;
+    },
+
+     set: function (value) {                 // es5
 
       const split = value.split(' ');
       this.firstName = split[0];
       this.lastName = split[1];
 
-    },
-
-     get: function () {
-
-      return this.firstName + ' ' + this.lastName;
     }
   })
 
@@ -54,6 +54,39 @@
  console.log(user2.firstName); // Masha
   console.log(user2.lastName); // Ivanova
  console.log(Object.getOwnPropertyNames(user2));  // [ 'firstName', 'lastName', 'fullName' ]
+
+
+ // аналогично get/set работает в литерале объекта
+
+ const userLiteral = {
+    firstNameL: null,
+    lastNameL: null,
+
+   get fullNameL () {   // es6
+
+      return this.firstNameL + ' ' + this.lastNameL;
+   },
+   set fullNameL (value){    // es6
+
+      let x = value.split(' ');
+      this.firstNameL = x[0];
+      this.lastNameL = x[1];
+   }
+
+ }
+
+ userLiteral.fullNameL = 'Adelaida Nino';
+
+ console.log(Object.getOwnPropertyNames(userLiteral));  // [ 'firstNameL', 'lastNameL', 'fullNameL' ]
+
+ console.log(userLiteral.fullNameL);   // Adelaida Nino
+
+ console.log(userLiteral.firstNameL);  // Adelaida
+
+ console.log(userLiteral.lastNameL);  // Nino
+
+
+
 
 
 
