@@ -2,41 +2,41 @@
 
 
 
-//    const obj = {
-//
-//       a: 1,
-//       c: 3,
-//       internal: 2
-//    }
-//
-//    Object.defineProperty(obj, 'internal', {
-//
-//      enumerable: false
-//
-//    });
-//
-//   console.log(Object.keys(obj));  // [ 'a', 'c' ]  возвращает все перечислимые свойства
-//
-//    console.log(Object.getOwnPropertyNames(obj));   // [ 'a', 'c', 'internal' ]  возвращает все собственные свойства
-//
-//
-// //   Object.preventExtensions
-//
-//    const user = {
-//
-//      name: 'Tonya'
-//    };
-//
-//    Object.preventExtensions(user);
-//
-//    user.age = 30;
-//    user.height = 168;
-//
-//    console.log(Object.isExtensible(user));  // false
-//
-//    console.log(user.age);                   // undefined   если 'use strict' - TypeError: Cannot add property age, object is not extensible
-//
-//    console.log(user.height);                // undefined      если 'use strict' - TypeError: Cannot add property age, object is not extensible
+   const obj = {
+
+      a: 1,
+      c: 3,
+      internal: 2
+   }
+
+   Object.defineProperty(obj, 'internal', {
+
+     enumerable: false
+
+   });
+
+  console.log(Object.keys(obj));  // [ 'a', 'c' ]  возвращает все перечислимые свойства
+
+   console.log(Object.getOwnPropertyNames(obj));   // [ 'a', 'c', 'internal' ]  возвращает все собственные свойства
+
+
+//   Object.preventExtensions
+
+   const user = {
+
+     name: 'Tonya'
+   };
+
+   Object.preventExtensions(user);
+
+   user.age = 30;
+   user.height = 168;
+
+   console.log(Object.isExtensible(user));  // false
+
+   console.log(user.age);                   // undefined   если 'use strict' - TypeError: Cannot add property age, object is not extensible
+
+   console.log(user.height);                // undefined      если 'use strict' - TypeError: Cannot add property age, object is not extensible
 
 
 //
