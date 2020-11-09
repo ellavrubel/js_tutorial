@@ -70,8 +70,8 @@
 
   }
 
-  user3.fullName = 'Olga';  // при присваивании автоматически срабатывает setter
-  console.log(user3.fullName); // Olga    - при извлечении - getter
+  user3.fullName = 'Olga';  // setter срабатывает автоматически при присваении
+  console.log(user3.fullName); // Olga    - при извлечении/чтении автоматически срабатывает getter
 
 //   удаление свойства
 
@@ -122,13 +122,13 @@
   console.log(your.friends[1].name); // Natali
 //
 
-//  Object.defineProperty - создание свойства, в кот самостоятельно нужно прописать значения
+//  Object.defineProperty - создание свойства, в кот самостоятельно нужно прописать значения..
 
-//  writable      - влияет на то, можно ли перезаписать value объекта
-//  configurable  - влияет на то, можно ли удалить свойство из объекта
-//  enumerable    - свойство/метод физически присутствует в объекте, но для Object.keys и для for..in он не виден. Для getOwnPropertyNames - виден
+//  writable (false)     - влияет на то, можно ли перезаписать value объекта
+//  configurable (false)  - влияет на то, можно ли удалить свойство из объекта
+//  enumerable  (false)   - свойство/метод физически присутствует в объекте, но для Object.keys и для for..in он не виден.                                 Для getOwnPropertyNames - виден
 
-//   как false, т.к default - true  Несмотря на то, что метод перезаписывает дефолтные значения на false, нужно прописать это вручную
+//   ..как false, т.к default - true  Несмотря на то, что метод перезаписывает дефолтные значения на false, нужно прописать это вручную
 
   const person = {};
 

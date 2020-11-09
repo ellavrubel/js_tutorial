@@ -10,13 +10,13 @@
 
       get: function fullName (){
 
-       return this.firstName + ' ' + this.lastName;
+       return `${this.firstName} + ${this.lastName}`;
       }
  })
 
  console.log(user); // { firstName: 'Tina', lastName: 'Tanina' }  свойство fullName физически отсутствует в объекте
 
- console.log(user.fullName); // Tina Tanina
+ console.log(user.fullName); // Tina Tanina   только при чтении запустился getter
 
 
 //  setter
@@ -32,7 +32,7 @@
 
   Object.defineProperty(user2, 'fullName', {
 
-     get: function () {                       //es5?
+     get: function () {                       //es5
 
       return this.firstName + ' ' + this.lastName;
     },
@@ -84,6 +84,32 @@
  console.log(userLiteral.firstNameL);  // Adelaida
 
  console.log(userLiteral.lastNameL);  // Nino
+
+
+
+ // создание виртуального свойства, кот можно прочитать и изменить
+
+ const book = {
+   name: 'Sonya',
+   author: 'Fedina',
+
+   get anotherAuthorName(){
+     return `${this.name} ${this.author}`;
+   },
+
+   set anotherAuthorName(value){
+
+     [this.name, this.author] = value.split(' ');
+   }
+ }
+
+ book.anotherAuthorName = 'Ball Suvorov';
+ console.log(book.name);  // Ball
+ console.log(book.author); // Suvorov
+
+
+
+ //
 
 
 
