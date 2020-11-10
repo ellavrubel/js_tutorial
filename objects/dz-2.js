@@ -33,7 +33,18 @@
       return this._name;
     },
 
-    roles:[],
+    roles: [],
+
+    checkRoles(){
+
+      if(this.roles.length === 0){
+
+        return (`Сотрудник ${this.name} не назначен ни на какую должность в компании.`)
+      } else {
+
+        return `Сотрудник ${this.name} назначен на должность: ${this.roles}.`
+      }
+    },
 
     toString (){
       return `Сотрудник ${this.name} занимает следующую позицию в компании: ${this.roles}`;
@@ -42,12 +53,8 @@
 
 
   person.name = 'Ella Vrubel';
-  person.roles = ['Web- Developer'];
+  person.roles = ['Web-Developer'];
 
+  console.log(person.checkRoles());
 
-  console.log(person.toString()); // Сотрудник Ella Vrubel занимает следующую позицию в компании: Web- Developer
-
-
-  const staff = Object.create(person);
-  console.log(staff.name);  // Ella Vrubel
 
