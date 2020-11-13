@@ -4,24 +4,24 @@
 //  замена каждой первой буквы на заглавную
 
 const paragraph = `hello, ella, how are you?`;
-let capitalize = '';
+let capitalized = '';
 
-const splitted = paragraph.split(' ');
+const splitted = paragraph.split(' '); // ["hello,", "ella,", "how", "are", "you?"]
 
 const transform2 = str => str.replace(/^\w/, chr => chr.toUpperCase());
 
 for (let i = 0; i < splitted.length; i++) {
   const str = splitted[i];
 
-  if (capitalize) {
-    capitalize += ' ';
-    capitalize += transform2(str);
+  if (capitalized) {
+    capitalized += ' ';
+    capitalized += transform2(str);
   } else {
-    capitalize += transform2(str);
+    capitalized += transform2(str);
   }
 }
  
-console.log(capitalize);  // Hello, Ella, How Are You?
+console.log(capitalized);  // Hello, Ella, How Are You?
 
 
 
