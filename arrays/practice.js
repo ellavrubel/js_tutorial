@@ -62,6 +62,18 @@ console.log(word);             //  news
 // unshift() - добавляет в начало элемент     shift() - убирает
 
 
+// объединение 2-х массивов в один, удаление повторяющихся элементов
+
+const a = [1, 2, 3, 4, 5];
+const b = [3,7,5,4,9];
+
+const c = a.concat(b);
+
+const res = c.filter((item, pos) => c.indexOf(item) === pos);
+
+console.log(res);   // [ 1, 2, 3, 4, 5, 7, 9 ]
+
+//
 
 
 
