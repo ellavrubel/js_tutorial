@@ -109,7 +109,7 @@ console.log(mapped);    // [ 156, 68, -68, 10, -4, 156, 112 ]
 
 const names = ['HTML', 'CSS', "JavaScript"];
 
-const newNames = names.map(name =>{
+const newNames = names.map(name => {
 
   let updated = name;
 
