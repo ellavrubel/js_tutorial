@@ -2,17 +2,17 @@
 
 // порядок выполнения блоков finally-return
 
-// function func (a, b) {
-//
-//   try {
-//     return a + b;
-//   } finally {
-//     console.log('Finally block goes before return!')
-//   }
-// }
-//
-// console.log(func(3, 5));
-// console.log('Just text.');
+function func (a, b) {
+
+  try {
+    return a + b;
+  } finally {
+    console.log('Finally block goes before return!')
+  }
+}
+
+console.log(func(3, 5));
+console.log('Just text.');
 
 // Finally block goes before return!
 // 8
