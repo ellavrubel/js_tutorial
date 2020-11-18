@@ -81,3 +81,9 @@ try{
 } catch (e) {
   console.log(e.message);
 }
+
+try{
+  throw new Error('Test');
+}catch (e) {
+  console.log(e.stack);   // в браузере получим Error: Test    at <anonymous>:2:9
+}
