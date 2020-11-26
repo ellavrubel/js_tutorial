@@ -33,7 +33,7 @@ setTimeout(function () {
 
   const hrEnd = process.hrtime(hrStart);
 
-  console.log(`Exxecution Time: ${hrStart[0]}s`);
+  console.log(`Execution Time: ${hrStart[0]}s`);
   console.log(`Execution Time: ${hrEnd[1] / 1000000}ms`)
 
 }, 0);
