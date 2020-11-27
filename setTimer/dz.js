@@ -24,10 +24,11 @@
 
 function timer (x, boolean, y) {
 
-  let timeOut;
+  let timeout;
   let interval;
 
-  x = x * 1000;
+  x = x * 1000;  // переводим в секунды
+  y = y * 1000;
 
   if (typeof x !== 'number'){
     throw new Error(`'x' must be a number of seconds!`);
@@ -43,15 +44,12 @@ function timer (x, boolean, y) {
   }
 
 
-
-
-
-
-
   return boolean === true ?
-     timeOut = setTimeout(() => console.log(new Date()), x):
+
+     setTimeout(() => console.log(`Today is: ${new Date()}`), x):
+
      interval = setInterval(() => {
-       console.log(new Date());
+       console.log(`IntervalFunc: ${new Date()}`);
        setTimeout(() => clearInterval(interval), y);
      }, x);
 
