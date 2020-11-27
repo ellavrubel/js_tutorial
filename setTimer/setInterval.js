@@ -13,3 +13,5 @@ const timerId = setInterval(function () {
 // правильно отменять через clearInterval()
 
 clearInterval(timerId);
+
+

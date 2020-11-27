@@ -24,40 +24,40 @@
 
 function timer (x, boolean, y) {
 
+  let timeOut;
+  let interval;
+
+  x = x * 1000;
+
   if (typeof x !== 'number'){
     throw new Error(`'x' must be a number of seconds!`);
   }
   if (typeof boolean !== 'boolean'){
     throw new Error(`please, put here something that is true or false`);
   }
-  if (typeof y !== 'number'){
-    throw new Error(`'y' must be a number of seconds!`);
+  if (boolean === false && typeof y !== 'number'){
+    throw new Error(`'y' must be a positive number of seconds!`);
   }
-  if (boolean === true){
+  if (boolean === true &&  y > 0 || y < 0){
     throw new Error(`when 'boolean' is true, there mustn't be an 'y'!`);
   }
 
-  let timerDate = setTimeout(() => console.log(new Date()), x);
 
-  let timerInterval = setInterval(() => {
-    let stopInterval = 0;
-    stopInterval++;
 
-    console.log(new Date());
 
-    if(stopInterval > y){
-      clearInterval(timerInterval);
-    }
 
-  }, x);
 
-  if (boolean === true){
-    return timerDate;
-  } else {
-    return timerInterval;
-  }
+
+  return boolean === true ?
+     timeOut = setTimeout(() => console.log(new Date()), x):
+     interval = setInterval(() => {
+       console.log(new Date());
+       setTimeout(() => clearInterval(interval), y);
+     }, x);
 
 }
 
-timer(3000, false, 5000);
+timer(2, false, 6);
+
+
 
